@@ -1,4 +1,3 @@
-// const fs = require('fs');
 const { stdout, stdin } = process;
 const { setupScreen, drawTrack, getMoves } =
   require('./dinoLib.js');
@@ -19,7 +18,6 @@ const main = (difficulty = 1) => {
   const moves = getMoves(dino);
     
   stdin.setRawMode(true);
-  stdin.resume();
   stdin.on('data', (keyStroke) => {
     moves.emit(keyStroke);
   });
@@ -34,5 +32,3 @@ const main = (difficulty = 1) => {
 };
 
 main(process.argv[2]);
-
-// why is var is a bad idea to use ?
